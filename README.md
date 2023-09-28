@@ -41,6 +41,8 @@ https://github.com/timstats91/Banking-Application/tree/master/FirstBank/
 Video follow along:
 https://www.youtube.com/watch?v=hqY6rKhRBzU
 
+https://www.w3schools.com/java/java_user_input.asp
+
 ## License
 
 The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
