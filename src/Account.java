@@ -1,20 +1,28 @@
+
 import java.util.Scanner;
 
 public class Account {
     // Class Variables
-    int balance;
-    int previousTransaction;
+    Double balance;
+    Double previousTransaction;
     String customerName;
     String customerID;
 
     // Class constructor
-    Account(String cname, String cid) {
+    Account(String cname, String cid, Double blc) {
         customerName = cname;
         customerID = cid;
+        balance = blc;
+    }
+
+    // Constructor to initialize the balance
+    public Account(double initialBalance) {
+        this.balance = initialBalance;
+        this.previousTransaction = 0.0;
     }
 
     // Function for Depositing money
-    void deposit(int amount) {
+    void deposit(Double amount) {
         if (amount != 0) {
             balance = balance + amount;
             previousTransaction = amount;
@@ -22,7 +30,7 @@ public class Account {
     }
 
     // Function for Withdrawing money
-    void withdraw(int amount) {
+    void withdraw(Double amount) {
         if (amount != 0) {
             balance = balance - amount;
             previousTransaction = -amount;
@@ -83,7 +91,7 @@ public class Account {
                 // 'deposit' function
                 case 'B':
                     System.out.println("Enter an amount to deposit: ");
-                    int amount = scanner.nextInt();
+                    Double amount = scanner.nextDouble();
                     deposit(amount);
                     System.out.println();
                     break;
@@ -91,7 +99,7 @@ public class Account {
                 // 'withdraw' function
                 case 'C':
                     System.out.println("Enter an amount to withdraw: ");
-                    int amount2 = scanner.nextInt();
+                    Double amount2 = scanner.nextDouble();
                     withdraw(amount2);
                     System.out.println();
                     break;
@@ -122,5 +130,6 @@ public class Account {
             }
         } while (option != 'F');
         System.out.println("Thank you for banking with us!");
+        scanner.close();
     }
 }
